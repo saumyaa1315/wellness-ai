@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Wellness color palette - calming and motivational */
+    --background: 180 20% 98%;
+    --foreground: 220 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 15%;
+
+    /* Primary: Calming teal for wellness */
+    --primary: 175 60% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 175 70% 60%;
+
+    /* Secondary: Warm coral for motivation */
+    --secondary: 15 85% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent: Soft purple for mindfulness */
+    --accent: 265 60% 70%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 180 15% 94%;
+    --muted-foreground: 220 15% 45%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 20% 88%;
+    --input: 180 20% 88%;
+    --ring: 175 60% 45%;
+
+    --radius: 0.75rem;
+    
+    /* Custom wellness gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(175 60% 45%), hsl(175 70% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(15 85% 65%), hsl(35 90% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(265 60% 70%), hsl(285 65% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(180 25% 97%), hsl(175 30% 95%));
+    
+    /* Shadows for depth */
+    --shadow-soft: 0 4px 20px hsl(175 40% 45% / 0.1);
+    --shadow-card: 0 8px 30px hsl(175 40% 45% / 0.12);
+    --shadow-glow: 0 0 40px hsl(175 70% 60% / 0.25);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 180 10% 95%;
+
+    --card: 220 22% 12%;
+    --card-foreground: 180 10% 95%;
+
+    --popover: 220 22% 12%;
+    --popover-foreground: 180 10% 95%;
+
+    --primary: 175 60% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 175 70% 65%;
+
+    --secondary: 15 80% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 265 55% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 180 8% 60%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 175 60% 50%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(175 60% 40%), hsl(175 70% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(15 80% 55%), hsl(35 85% 65%));
+    --gradient-accent: linear-gradient(135deg, hsl(265 55% 60%), hsl(285 60% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 25% 10%), hsl(175 20% 15%));
+    
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 8px 30px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(175 70% 50% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-gradient-to-br from-primary to-primary-glow bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-secondary {
+    @apply bg-gradient-to-br from-secondary to-orange-400 bg-clip-text text-transparent;
+  }
+  
+  .card-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-card);
+  }
+}

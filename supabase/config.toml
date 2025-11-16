@@ -1,0 +1,4 @@
+project_id = "xbebmdwqnzvzngwhlvku"
+
+[functions.generate-wellness-tips]
+verify_jwt = false
