@@ -31,9 +31,9 @@ Choose from multiple goals:
 - **Tailwind CSS**: Utility-first styling with custom design system
 - **shadcn/ui**: Beautiful, accessible UI components
 
-### Backend (Lovable Cloud)
+### Backend 
 - **Edge Function**: `generate-wellness-tips` handles all AI requests
-- **Lovable AI Gateway**: Powered by Google Gemini 2.5 Flash model
+- **AI Gateway**: Powered by Google Gemini 2.5 Flash model
 - **Two AI Operations**:
   - Generate 5 personalized wellness tips
   - Expand specific tips with details and action plans
@@ -82,7 +82,7 @@ The app uses a carefully crafted wellness-themed design system:
 
 ### Prerequisites
 - Node.js & npm installed
-- Lovable Cloud enabled (automatic with this project)
+- Cloud enabled (automatic with this project)
 
 ### Installation
 
@@ -103,13 +103,6 @@ npm run dev
 ```
 
 4. Open http://localhost:8080 in your browser
-
-## 🔧 Configuration
-
-The app is pre-configured with:
-- Lovable Cloud backend
-- Lovable AI Gateway (Google Gemini 2.5 Flash)
-- LOVABLE_API_KEY (auto-configured as Supabase secret)
 
 No additional API keys or configuration required!
 
@@ -210,25 +203,4 @@ Potential features to add:
 - Good balance of quality and speed
 - Perfect for wellness recommendations
 
-**Temperature**: 0.8 (creative but consistent)
 
-## 🐛 Known Issues
-
-- Tips and profile don't persist across sessions (by design)
-- Regenerating while on detail page doesn't update current tip
-- No undo for removing favorites
-
-## 📝 License
-
-This project was created with Lovable.dev - AI-powered web app builder.
-
-## 🙋 Support
-
-For issues or questions:
-- Check the Lovable docs: https://docs.lovable.dev
-- Join the Lovable community: https://discord.gg/lovable
-- View your backend: Click "Cloud" tab in Lovable editor
-
----
-
-Built with ❤️ using Lovable, React, TypeScript, and AI
