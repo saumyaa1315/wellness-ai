@@ -2,6 +2,16 @@
 
 A beautiful, personalized wellness app that uses AI to generate tailored health and wellness recommendations based on your profile and goals.
 
+## 📝 Problem Understanding
+The assignment required building an AI-powered wellness recommendation system that:
+1.Captures user information (age, gender, wellness goal)
+2.Generates exactly 5 personalized wellness tips
+3.Displays them as scrollable cards
+4.Allows the user to click a card for detailed explanation + step-by-step action plan
+5.Allows saving favorite tips
+6.Stores favorites locally
+7.Includes a “Regenerate” option for fresh AI responses
+  
 ## ✨ Features
 
 - **Personalized Profile**: Enter your age, gender, and wellness goal to receive customized recommendations
@@ -22,7 +32,6 @@ Choose from multiple goals:
 - 🧠 Mental Clarity
 
 ## 🏗️ Architecture
-
 ### Frontend
 - **React + TypeScript**: Modern, type-safe component architecture
 - **React Router**: Client-side routing for seamless navigation
@@ -106,6 +115,50 @@ npm run dev
 
 No additional API keys or configuration required!
 
+
+## 🤖 AI Prompts & Iterations (Mandatory Section)
+  **Initial Prompt (Too Vague)**
+Give me wellness tips for a user based on age and goal.
+
+Issue:
+1.Responses were too long
+2.No consistent format
+3.Sometimes fewer/more than 5 tips
+4.Missing emojis or summaries
+
+**Improved Prompt**
+Generate 5 wellness tips for a 25-year-old female wanting weight loss.
+Include a title and one-line summary.
+
+Issue:
+1.Better, but lacked structure
+2.Summaries were inconsistent
+3.Titles were sometimes long
+
+ **⭐Final Prompt Used (Stable & Clean Output)**
+Generate exactly 5 concise, actionable wellness tips for a 
+<age>-year-old <gender> aiming for <goal>.
+
+For each tip, provide:
+1. A short, catchy title (max 6 words)
+2. A one-sentence summary (max 15 words)
+3. A relevant emoji icon
+
+ **Detail Expansion Prompt**
+Provide detailed information about the wellness tip: "<TITLE>"
+
+Include:
+1. A detailed explanation (2–3 short paragraphs)
+2. A practical 3–5 step action plan
+
+
+ **This final prompt ensured:**
+1.High consistency
+2.Predictable structure
+3.Clean UI rendering
+4.Readable AI output
+
+
 ## 💡 AI Prompt Examples
 
 ### Generating Tips
@@ -153,6 +206,12 @@ Include:
    - Remove tips from favorites
    - Click tips to view details
    - Shows save date for each tip
+
+
+## Screenshots
+
+
+
 
 ## 🔒 Data Persistence
 
