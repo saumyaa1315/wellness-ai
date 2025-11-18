@@ -208,8 +208,6 @@ Include:
    - Shows save date for each tip
 
 
-## Screenshots
-
 
 
 
