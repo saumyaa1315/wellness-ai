@@ -2,6 +2,16 @@
 
 A beautiful, personalized wellness app that uses AI to generate tailored health and wellness recommendations based on your profile and goals.
 
+## 📝 Problem Understanding
+The assignment required building an AI-powered wellness recommendation system that:
+1.Captures user information (age, gender, wellness goal)
+2.Generates exactly 5 personalized wellness tips
+3.Displays them as scrollable cards
+4.Allows the user to click a card for detailed explanation + step-by-step action plan
+5.Allows saving favorite tips
+6.Stores favorites locally
+7.Includes a “Regenerate” option for fresh AI responses
+  
 ## ✨ Features
 
 - **Personalized Profile**: Enter your age, gender, and wellness goal to receive customized recommendations
@@ -22,7 +32,6 @@ Choose from multiple goals:
 - 🧠 Mental Clarity
 
 ## 🏗️ Architecture
-
 ### Frontend
 - **React + TypeScript**: Modern, type-safe component architecture
 - **React Router**: Client-side routing for seamless navigation
@@ -31,9 +40,9 @@ Choose from multiple goals:
 - **Tailwind CSS**: Utility-first styling with custom design system
 - **shadcn/ui**: Beautiful, accessible UI components
 
-### Backend (Lovable Cloud)
+### Backend 
 - **Edge Function**: `generate-wellness-tips` handles all AI requests
-- **Lovable AI Gateway**: Powered by Google Gemini 2.5 Flash model
+- **AI Gateway**: Powered by Google Gemini 2.5 Flash model
 - **Two AI Operations**:
   - Generate 5 personalized wellness tips
   - Expand specific tips with details and action plans
@@ -82,7 +91,7 @@ The app uses a carefully crafted wellness-themed design system:
 
 ### Prerequisites
 - Node.js & npm installed
-- Lovable Cloud enabled (automatic with this project)
+- Cloud enabled (automatic with this project)
 
 ### Installation
 
@@ -104,14 +113,51 @@ npm run dev
 
 4. Open http://localhost:8080 in your browser
 
-## 🔧 Configuration
-
-The app is pre-configured with:
-- Lovable Cloud backend
-- Lovable AI Gateway (Google Gemini 2.5 Flash)
-- LOVABLE_API_KEY (auto-configured as Supabase secret)
-
 No additional API keys or configuration required!
+
+
+## 🤖 AI Prompts & Iterations (Mandatory Section)
+  **Initial Prompt (Too Vague)**
+Give me wellness tips for a user based on age and goal.
+
+Issue:
+1.Responses were too long
+2.No consistent format
+3.Sometimes fewer/more than 5 tips
+4.Missing emojis or summaries
+
+**Improved Prompt**
+Generate 5 wellness tips for a 25-year-old female wanting weight loss.
+Include a title and one-line summary.
+
+Issue:
+1.Better, but lacked structure
+2.Summaries were inconsistent
+3.Titles were sometimes long
+
+ **⭐Final Prompt Used (Stable & Clean Output)**
+Generate exactly 5 concise, actionable wellness tips for a 
+<age>-year-old <gender> aiming for <goal>.
+
+For each tip, provide:
+1. A short, catchy title (max 6 words)
+2. A one-sentence summary (max 15 words)
+3. A relevant emoji icon
+
+ **Detail Expansion Prompt**
+Provide detailed information about the wellness tip: "<TITLE>"
+
+Include:
+1. A detailed explanation (2–3 short paragraphs)
+2. A practical 3–5 step action plan
+
+
+ **This final prompt ensured:**
+1.High consistency
+2.Predictable structure
+3.Clean UI rendering
+4.Readable AI output
+
 
 ## 💡 AI Prompt Examples
 
@@ -160,6 +206,24 @@ Include:
    - Remove tips from favorites
    - Click tips to view details
    - Shows save date for each tip
+
+
+## Screenshots
+
+### 1. Profile Screen
+![Profile Screen](assets/screenshots/profile.png)
+
+### 2. Tips Screen
+![Tips Screen](assets/screenshots/tips.png)
+
+### 3. Tip Details
+![Detail Screen](assets/screenshots/details.png)
+
+### 4. Favorites Screen
+![Favorites Screen](assets/screenshots/favorites.png)
+
+
+
 
 ## 🔒 Data Persistence
 
@@ -210,25 +274,8 @@ Potential features to add:
 - Good balance of quality and speed
 - Perfect for wellness recommendations
 
-**Temperature**: 0.8 (creative but consistent)
 
-## 🐛 Known Issues
-
-- Tips and profile don't persist across sessions (by design)
-- Regenerating while on detail page doesn't update current tip
-- No undo for removing favorites
-
-## 📝 License
-
-This project was created with Lovable.dev - AI-powered web app builder.
-
-## 🙋 Support
-
-For issues or questions:
-- Check the Lovable docs: https://docs.lovable.dev
-- Join the Lovable community: https://discord.gg/lovable
-- View your backend: Click "Cloud" tab in Lovable editor
-
----
-
-Built with ❤️ using Lovable, React, TypeScript, and AI
+## Author
+**Saumya Singh**
+GitHub: https://github.com/saumyaa1315
+Project Link: https://wellness-ai-two.vercel.app/
